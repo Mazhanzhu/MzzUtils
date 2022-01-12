@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+//使用layer-list添加多个图层，返回LayerDrawable
+//注意：bitmap使用的图片大小要小于屏幕大小
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:src="@mipmap/sp_bg" />
+    </item>
+</layer-list>

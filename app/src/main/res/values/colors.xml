@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--Appbar背景色-->
+    <color name="colorPrimary">#999999</color>
+    <!--状态栏颜色-->
+    <color name="colorPrimaryDark">#999999</color>
+    <!--控制各个控件被选中时的颜色-->
+    <color name="colorAccent">#3692DB</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background">#f5f6f9</color>
+    <color name="text_bg">#777777</color>
+    <color name="btn_gray_normal">#c0c0c0</color>
+    <color name="btn_gray_pressed">#666667</color>
+    <color name="seashell">#FFF5EE</color>
+    <color name="tomato">#FF6347</color>
+    <color name="orangered">#FF4500</color>
+    <color name="fuchsia">#FF00FF</color>
+    <color name="greenyellow">#ADFF2F</color>
+    <color name="gray">#808080</color>
+    <color name="aquamarine">#7FFFD4</color>
+    <color name="lawngreen">#7CFC00</color>
+    <color name="lime">#00FF00</color>
+    <!-- 酸橙色 -->
+    <color name="viewfinder_frame">#00cc00</color><!-- 绿色 -->
+    <color name="viewfinder_mask">#60000000</color><!-- 灰度 -->
+    <color name="viewfinder_laser">#FFFFFF</color><!--白色 -->
+    <color name="color_text_gray">#999999</color>
+    <color name="red">#FF0000</color>
+
+    <color name="colorPrimary_blueDark">#0277BD</color>
+    <color name="black_text">#99000000</color>
+    <color name="green_light">#47b196</color>
+    <color name="darkcyan">#008b8b</color>
+    <color name="white_night">#FFFFFF</color>
+    <color name="black_ff">#b01a1a1a</color>
+    <color name="gray_dark">#737373</color>
+    <color name="yellow">#FFBA00</color>
+    <color name="tab_download_item_btn_pressed">#cccccc</color>
+    <color name="tab_download_item_btn_normal">#e2ebf5</color>
+
+    <color name="lucency_50">#80000000</color><!--50%透明-->
+    <color name="lucency_30">#B3000000</color><!--30%透明-->
+    <color name="lucency_20">#CC000000</color><!--20%透明-->
+    <color name="lucency_all">#00000000</color><!--透明-->
+</resources>

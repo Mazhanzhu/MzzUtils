@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CountDownProgressView">
+        <!-- 圆实心的颜色 -->
+        <attr name="cd_circSolidColor" format="color"></attr>
+        <!-- 圆边框的颜色 -->
+        <attr name="cd_circFrameColor" format="color"></attr>
+        <!-- 进度条的颜色 -->
+        <attr name="cd_progressColor" format="color"></attr>
+        <!-- 文字的颜色 -->
+        <attr name="cd_textColor" format="color"></attr>
+        <attr name="cd_textstring" format="string"></attr>
+    </declare-styleable>
+</resources>
