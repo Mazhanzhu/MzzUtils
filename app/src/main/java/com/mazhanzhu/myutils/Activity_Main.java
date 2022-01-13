@@ -8,19 +8,25 @@ import android.os.Message;
 import android.view.Gravity;
 import android.view.View;
 
+import com.mazhanzhu.myutils.adapter.MainAdapter;
 import com.mazhanzhu.myutils.base.BaseAc_VB;
+import com.mazhanzhu.myutils.bean.BeanMzz;
 import com.mazhanzhu.myutils.databinding.ActivityMainBinding;
 import com.mazhanzhu.myutils.fm.Main_FmTab1;
 import com.mazhanzhu.myutils.fm.Main_FmTab2;
 import com.mazhanzhu.myutils.fm.Main_FmTab3;
 import com.mazhanzhu.utils.Log_Ma;
+import com.mazhanzhu.utils.MzzGlide;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
 import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
+
+import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 /**
  * Author : 马占柱
@@ -29,16 +35,17 @@ import androidx.fragment.app.FragmentTransaction;
  * Desc   : http://91porn.com/
  */
 public class Activity_Main extends BaseAc_VB<ActivityMainBinding> {
-    private static final String TAB00 = "tab00", TAB01 = "tab01", TAB02 = "tab02", TAB03 = "tab03", TAB04 = "tab04";
+    private static final String TAB01 = "tab01", TAB02 = "tab02", TAB03 = "tab03", TAB04 = "tab04";
     private Main_FmTab1 fmtab1;
     private Main_FmTab2 fmtab2;
     private Main_FmTab3 fmtab3;
-    private Handler handler=new Handler(Looper.myLooper()){
+    private Handler handler = new Handler(Looper.myLooper()) {
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
         }
     };
+
     @Override
     protected ActivityMainBinding getViewBinding() {
         return ActivityMainBinding.inflate(getLayoutInflater());
@@ -73,13 +80,14 @@ public class Activity_Main extends BaseAc_VB<ActivityMainBinding> {
         vb.drawerHeader.mainT2.setOnClickListener(this);
         vb.drawerHeader.mainT3.setOnClickListener(this);
         vb.drawerHeader.drawerimg.setOnClickListener(this);
+        MzzGlide.toView(vb.drawerT1.userImg, R.mipmap.userimg);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         handler.removeCallbacksAndMessages(null);
-        handler=null;
+        handler = null;
     }
 
     private void initFram(int position) {
@@ -141,7 +149,7 @@ public class Activity_Main extends BaseAc_VB<ActivityMainBinding> {
                     public void run() {
                         refreshLayout.finishLoadMore();
                     }
-                },1500);
+                }, 1500);
             }
 
             @Override
@@ -151,9 +159,14 @@ public class Activity_Main extends BaseAc_VB<ActivityMainBinding> {
                     public void run() {
                         refreshLayout.finishRefresh();
                     }
-                },1500);
+                }, 1500);
             }
         });
+        ArrayList<BeanMzz> list = new ArrayList<>();
+        list.add(new BeanMzz(1, "GPS相关", R.mipmap.gps, "", false));
+        MainAdapter mAdapter = new MainAdapter(R.layout.main_item, list, context);
+        vb.mainRv.setLayoutManager(new LinearLayoutManager(context));
+        vb.mainRv.setAdapter(mAdapter);
     }
 
     @Override

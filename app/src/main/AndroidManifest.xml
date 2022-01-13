@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity_Main" />
+        <activity android:name=".ui.Ac_GPS" />
     </application>
 
 </manifest>

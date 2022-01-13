@@ -80,6 +80,7 @@ dependencies {
     implementation project(':utils')
     implementation "androidx.core:core-ktx:1.6.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
 }
 repositories {
     mavenCentral()

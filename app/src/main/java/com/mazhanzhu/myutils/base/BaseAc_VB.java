@@ -37,7 +37,7 @@ public abstract class BaseAc_VB<Mzz extends ViewBinding> extends FragmentActivit
      * [true—允许旋转屏幕；false—禁止旋转屏幕]
      **/
     private boolean isAllowScreenRoate = false;
-    private Activity context;
+    protected Activity context;
     protected Mzz vb;
 
     @Override

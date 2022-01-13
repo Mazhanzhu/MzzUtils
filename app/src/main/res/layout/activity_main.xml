@@ -16,28 +16,38 @@
     <com.google.android.material.navigation.NavigationView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="start">
+        android:layout_gravity="start"
+        android:background="@color/white">
 
-        <com.scwang.smart.refresh.layout.SmartRefreshLayout
-            android:id="@+id/main_refresh"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            app:srlEnablePreviewInEditMode="true">
+            android:orientation="vertical">
 
-            <com.scwang.smart.refresh.header.ClassicsHeader
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/mzzdp_10" />
+            <include
+                android:id="@+id/drawer_t1"
+                layout="@layout/header" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/main_rv"
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/main_refresh"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                app:srlEnablePreviewInEditMode="true">
 
-            <com.scwang.smart.refresh.footer.ClassicsFooter
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+                <com.scwang.smart.refresh.header.ClassicsHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/main_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never" />
+
+                <com.scwang.smart.refresh.footer.ClassicsFooter
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+        </LinearLayout>
     </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/btn_gray_normal">
+    <item>
+        <shape android:shape="rectangle">
+            <corners
+                android:bottomLeftRadius="@dimen/mzzdp_0"
+                android:bottomRightRadius="@dimen/mzzdp_0"
+                android:topLeftRadius="@dimen/mzzdp_0"
+                android:topRightRadius="@dimen/mzzdp_0" />
+            <solid android:color="@color/btn_gray_pressed" />
+        </shape>
+    </item>
+</ripple>

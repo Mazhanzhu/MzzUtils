@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/mzzdp_ActionBar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请输入经纬度 例如：115.382566,39.663349 中间是英文逗号"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/mzzsp_10" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mzzdp_40"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/gps_a"
+                android:layout_width="@dimen/mzzdp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:gravity="center"
+                android:hint="请输入A点的经纬度"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textSize="@dimen/mzzsp_12" />
+
+            <View
+                android:layout_width="@dimen/mzzdp_2"
+                android:layout_height="match_parent" />
+
+            <EditText
+                android:id="@+id/gps_b"
+                android:layout_width="@dimen/mzzdp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:gravity="center"
+                android:hint="请输入B点的经纬度"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textSize="@dimen/mzzsp_12" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/gps_js"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mzzdp_25"
+            android:layout_marginTop="@dimen/mzzdp_5"
+            android:background="@color/gray"
+            android:gravity="center"
+            android:text="点击计算"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</ScrollView>
