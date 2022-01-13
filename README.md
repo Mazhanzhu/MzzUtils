@@ -17,7 +17,8 @@ dependencies {
   
 ### 1.0.0 增加：
 *AES加密解密、Activity管理栈、文件工具类以及各种获取intent意图  
-圆形倒计时 使用如下：【也可以在代码中进行设置，比如倒计时时间、开始、停止以及监听等】*
+圆形倒计时 使用如下：【也可以在代码中进行设置，比如倒计时时间、开始、停止以及监听等】  
+JsonUtils解析工具类 尺寸工具类 文件工具类*
 ```
 <com.mazhanzhu.utils.view.CountDownProgressView
         android:id="@+id/sp_countview"
