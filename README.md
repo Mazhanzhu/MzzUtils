@@ -1,6 +1,5 @@
 # 超实用工具类！
 ## 这是我的[个人博客 点击查看](https://blog.csdn.net/fengyeNom1?spm=1011.2124.3001.5343)
-*首次提交 里面包含AES加密解密、Activity管理栈、文件工具类以及各种获取intent意图*
 ### Add it in your root build.gradle at the end of repositories:
 ```
 allprojects {
@@ -17,7 +16,8 @@ dependencies {
   ```
   
 ### 1.0.0 增加：
-圆形倒计时 使用如下：【也可以在代码中进行设置，比如倒计时时间、开始、停止以及监听等】
+*AES加密解密、Activity管理栈、文件工具类以及各种获取intent意图  
+圆形倒计时 使用如下：【也可以在代码中进行设置，比如倒计时时间、开始、停止以及监听等】*
 ```
 <com.mazhanzhu.utils.view.CountDownProgressView
         android:id="@+id/sp_countview"
