@@ -11,7 +11,7 @@ allprojects {
 ### Add the dependency
 ```
 dependencies {
-	        implementation 'com.github.Mazhanzhu:MzzUtils:Tag'//最新 1.0.0
+	        implementation 'com.github.Mazhanzhu:MzzUtils:Tag'//最新 1.0.1
 	}
   ```
   
