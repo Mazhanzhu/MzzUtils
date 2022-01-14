@@ -14,7 +14,7 @@ import com.mazhanzhu.utils.gps.MzzDistanceUtils;
  * Author : 马占柱
  * E-mail : mazhanzhu_3351@163.com
  * Time   : 2022/1/13 11:31
- * Desc   : GPS
+ * Desc   : GPS 555555
  */
 public class Ac_GPS extends BaseAc_VB<AcGpsBinding> {
     @Override
