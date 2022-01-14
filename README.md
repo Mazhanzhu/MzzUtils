@@ -16,9 +16,11 @@ dependencies {
   ```
   
 ### 1.0.0 增加：
-*AES加密解密、Activity管理栈、文件工具类以及各种获取intent意图  
+*AES加密解密、Activity管理栈【MzzActivityTool】、各种获取intent意图【MzzIntentTool】  
 圆形倒计时 使用如下：【也可以在代码中进行设置，比如倒计时时间、开始、停止以及监听等】  
-JsonUtils解析工具类 尺寸工具类 文件工具类*
+JsonUtils解析工具类【MzzJsonUtils】 尺寸工具类【MzzPxUtils】 文件工具类【MzzFileTool】  
+压缩相关工具类【MzzZipTool】 线程工具类【ThreadPoolUtils】 时间相关工具类【MzzTimeTool】
+*
 ```
 <com.mazhanzhu.utils.view.CountDownProgressView
         android:id="@+id/sp_countview"
