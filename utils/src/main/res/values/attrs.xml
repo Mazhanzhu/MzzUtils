@@ -35,6 +35,7 @@
         <attr name="siv_border_size" format="dimension" />
         <!--颜色-->
         <attr name="siv_border_color" format="color" />
+
     </declare-styleable>
     <!-- 设置view相关selector熟悉-->
     <declare-styleable name="MzzView">
