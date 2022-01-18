@@ -6,21 +6,21 @@ package com.mazhanzhu.utils.gps;
  * Time   : 2022/1/13 9:48
  * Desc   : 两个经纬度之间距离计算
  */
-public class MzzDistanceUtils {
+public class MzzMapDistance {
     public static final String TAG = "MzzDistanceUtils";
     private double DEF_PI = 3.14159265359; // PI
     private double DEF_2PI = 6.28318530712; // 2*PI
     private double DEF_PI180 = 0.01745329252; // PI/180.0
     private double DEF_R = 6378137.5; // 地球的半径 6378137.5
 
-    private MzzDistanceUtils() {
+    private MzzMapDistance() {
     }
 
-    private static MzzDistanceUtils instance;
+    private static MzzMapDistance instance;
 
-    public static synchronized MzzDistanceUtils getInstance() {
+    public static synchronized MzzMapDistance getInstance() {
         if (instance == null) {
-            instance = new MzzDistanceUtils();
+            instance = new MzzMapDistance();
         }
         return instance;
     }

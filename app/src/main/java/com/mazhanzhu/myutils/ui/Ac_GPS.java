@@ -8,7 +8,7 @@ import com.mazhanzhu.myutils.R;
 import com.mazhanzhu.myutils.base.BaseAc_VB;
 import com.mazhanzhu.myutils.databinding.AcGpsBinding;
 import com.mazhanzhu.utils.MzzToastUtils;
-import com.mazhanzhu.utils.gps.MzzDistanceUtils;
+import com.mazhanzhu.utils.gps.MzzMapDistance;
 
 /**
  * Author : 马占柱
@@ -48,7 +48,7 @@ public class Ac_GPS extends BaseAc_VB<AcGpsBinding> {
             return;
         }
         try {
-            double shortDistance = MzzDistanceUtils.getInstance().getShortDistance(
+            double shortDistance = MzzMapDistance.getInstance().getShortDistance(
                     Double.parseDouble(splita[0]),
                     Double.parseDouble(splita[1]),
                     Double.parseDouble(splitb[0]),
