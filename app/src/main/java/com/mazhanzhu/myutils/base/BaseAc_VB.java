@@ -63,7 +63,7 @@ public abstract class BaseAc_VB<Mzz extends ViewBinding> extends FragmentActivit
         context = this;
         vb = getViewBinding();
         setContentView(vb.getRoot());
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);//禁止手机进行截图操作
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);//禁止手机进行截图操作
 //        OpenGray(true);//打开灰度模式
         initView(savedInstanceState);
         MzzActivityTool.addActivity(this);
@@ -81,7 +81,7 @@ public abstract class BaseAc_VB<Mzz extends ViewBinding> extends FragmentActivit
     protected void onDestroy() {
         super.onDestroy();
         MzzActivityTool.finishActivity(this);
-        vb=null;
+        vb = null;
     }
 
     protected abstract Mzz getViewBinding();

@@ -44,10 +44,10 @@ public class MzzGPSCheckUtils {
                                                           double lat_B1, double lng_B2,
                                                           List<Bean_WLData> queryAll) {
         MzzGPSCheckUtils.LatLon wlPonint = null;
-        SegmentLatLon LatLonOne = new SegmentLatLon();//线段一
-        LatLonOne.setStartLatLon(new LatLon(lng_A1, lat_A1));
-        LatLonOne.setEndLatLon(new LatLon(lng_B2, lat_B1));
         if (queryAll.size() > 1) {
+            SegmentLatLon LatLonOne = new SegmentLatLon();//线段一
+            LatLonOne.setStartLatLon(new LatLon(lng_A1, lat_A1));
+            LatLonOne.setEndLatLon(new LatLon(lng_B2, lat_B1));
             for (int j = 0; j < queryAll.size(); j++) {
                 MzzGPSCheckUtils.SegmentLatLon LatLonTwo = new MzzGPSCheckUtils.SegmentLatLon();//线段二
                 LatLonTwo.setStartLatLon(new MzzGPSCheckUtils.LatLon(queryAll.get(j).getLng(), queryAll.get(j).getLat()));

@@ -48,15 +48,11 @@ public class SelectorAttrs {
             }
         }
 
-        TypedArray a = context.obtainStyledAttributes(attrs,
-                R.styleable.View);
-
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MzzView);
         // 背景图片和背景颜色互斥，只能设置其中之一
-
         if (bitmapDrawable instanceof ColorDrawable) { // 颜色值
             bitmapDrawable = null;
         }
-
         // 用于设置背景的颜色和形状
         GradientDrawable colorShapeDrawable = null;
         GradientDrawable colorShapeDrawablePressed = null;

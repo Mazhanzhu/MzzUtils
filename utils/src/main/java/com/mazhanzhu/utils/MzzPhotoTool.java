@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.DocumentsContract;
@@ -17,6 +18,8 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -32,11 +35,13 @@ import androidx.fragment.app.Fragment;
  * Desc   : 图片工具类
  */
 public class MzzPhotoTool {
+    public static final String TAG = "MzzPhotoTool";
     public static final int GET_IMAGE_BY_CAMERA = 5001;
     public static final int GET_IMAGE_FROM_PHONE = 5002;
     public static final int CROP_IMAGE = 5003;
     public static Uri imageUriFromCamera;
     public static Uri cropImageUri;
+    public static final String downpath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
 
     public static void openCameraImage(final Activity activity) {
         imageUriFromCamera = createImagePathUri(activity);
@@ -258,5 +263,23 @@ public class MzzPhotoTool {
             return imageUri.getPath();
         }
         return null;
+    }
+
+    //保存图片
+    public static boolean saveImage(Context context, Bitmap bmp) {
+        try {
+            File file = new File(downpath, System.currentTimeMillis() + ".jpg");
+            FileOutputStream fos = new FileOutputStream(file);
+            bmp.compress(Bitmap.CompressFormat.JPEG, 80, fos);
+            fos.flush();
+            fos.close();
+            Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+            intent.setData(Uri.fromFile(file));
+            context.sendBroadcast(intent);
+            return true;
+        } catch (Exception e) {
+            Log_Ma.e(TAG, e.toString());
+            return false;
+        }
     }
 }

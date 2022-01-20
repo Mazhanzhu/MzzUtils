@@ -1,6 +1,5 @@
 package com.mazhanzhu.utils.view;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -19,9 +18,10 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.util.AttributeSet;
-import android.widget.ImageView;
 
 import com.mazhanzhu.utils.R;
+
+import androidx.appcompat.widget.AppCompatImageView;
 
 /**
  * Author : 马占柱
@@ -29,8 +29,7 @@ import com.mazhanzhu.utils.R;
  * Time   : 2022/1/13 10:48
  * Desc   : 可设置形状的ImageView，抗边缘锯齿
  */
-@SuppressLint("AppCompatCustomView")
-public class ShapeImageView extends ImageView {
+public class ShapeImageView extends AppCompatImageView {
     private static final Bitmap.Config BITMAP_CONFIG = Bitmap.Config.ARGB_8888;
     private static final int COLORDRAWABLE_DIMENSION = 2;
 

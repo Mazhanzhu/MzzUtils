@@ -61,5 +61,16 @@
             android:gravity="center"
             android:text="点击计算"
             android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/gps_cs"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/mzzdp_5"
+            android:background="@color/colorPrimary_blueDark"
+            android:gravity="center"
+            android:text="测试经纬度与围栏是否相交"
+            android:textColor="@color/white"
+            android:textIsSelectable="true" />
     </LinearLayout>
 </ScrollView>

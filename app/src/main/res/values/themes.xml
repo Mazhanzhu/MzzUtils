@@ -21,9 +21,11 @@
         <item name="colorAccent">@color/yellow</item>
     </style>
 
-    <style name="NoTitleFullscreen" parent="AppTheme">
+    <style name="NoTitleFullscreen">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@drawable/sp_loading</item>
+        <!--<item name="android:windowBackground">@drawable/sp_loading</item>-->
     </style>
 </resources>
