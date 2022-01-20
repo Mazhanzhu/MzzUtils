@@ -51,7 +51,7 @@ JsonUtils解析工具类【MzzJsonUtils】 尺寸工具类【MzzPxUtils】 文�
 效果大概这样
 ![image](https://img-blog.csdnimg.cn/bf340fec70964596b047004f37e5e62c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5Yav5Lq65ZSQ,size_20,color_FFFFFF,t_70,g_se,x_16)
 ### 1.0.1 新增
-*自定义形状图片，增加两点间距离公式、增加glide依赖：*
+*自定义形状图片，增加两点间距离公式、增加glide依赖：MzzGPSCheckUtils Double运算工具类【MzzDoubleUtil】 修改了吐司工具类【MzzToastUtils】*
 ```
 double distance = MzzDistanceUtils.getInstance().getLongDistance(115.405912, 39.533194, 115.881071, 39.502472);//第一个点的经纬度、第二个点的经纬度，返回距离【单位 米】
 
