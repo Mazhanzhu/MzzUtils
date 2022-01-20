@@ -11,7 +11,7 @@ allprojects {
 ### Add the dependency
 ```
 dependencies {
-	        implementation 'com.github.Mazhanzhu:MzzUtils:Tag'//最新 1.0.1
+	        implementation 'com.github.Mazhanzhu:MzzUtils:Tag'//最新 1.0.2
 	}
   ```
   
@@ -92,3 +92,5 @@ MzzGlide.toView(imagview, object);//glide使用
         <!--颜色-->
         <attr name="siv_border_color" format="color" />
 ```
+### 1.0.2 新增
+*设备工具类【RxDeviceTool】 状态栏工具类【MzzBarTool】 修改上一版本圆角图片引起的崩溃问题
