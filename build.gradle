@@ -6,7 +6,9 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.1'
+        //fixme 查看gradle版本与 “gradle-wrapper.properties”里面distributionUrl的关系
+        //fixme https://developer.android.google.cn/studio/releases/gradle-plugin#groovy
+        classpath 'com.android.tools.build:gradle:4.2.2'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
