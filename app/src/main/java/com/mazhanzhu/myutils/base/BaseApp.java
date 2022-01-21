@@ -20,6 +20,7 @@ public class BaseApp extends Application {
         super.onCreate();
         mContext = getApplicationContext();
         Log_Ma.setIsShow(isApkInDebug());
+        CrashHandler_Ma.getInstance().init(this);
     }
 
     public static Context getContext() {

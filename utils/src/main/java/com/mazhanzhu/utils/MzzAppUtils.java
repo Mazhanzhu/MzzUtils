@@ -10,6 +10,14 @@ import android.content.pm.PackageManager;
  * Desc   :
  */
 public class MzzAppUtils {
+    //初始状态
+    public static int ACTION = 0;
+    // 加载
+    public static final int ACTION_INIT = 1;
+    //下拉刷新
+    public static final int ACTION_REFRESH = 2;
+    //加载更多
+    public static final int ACTION_LOADMORE = 3;
 
     /**
      * 判断是否具有相关权限_权限组

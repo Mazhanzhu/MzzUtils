@@ -16,6 +16,7 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.SystemClock;
+import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -40,7 +41,8 @@ import androidx.core.app.ActivityCompat;
  * Time   : 2022/1/18 14:32
  * Desc   : 设备工具类
  */
-public class RxDeviceTool {
+public class MzzDeviceTool {
+    public static final String TAG = "MzzDeviceTool";
 
     /**
      * 得到屏幕的高
@@ -337,6 +339,7 @@ public class RxDeviceTool {
      * @param phoneNumber 电话号码
      */
     public static void callPhone(final Context context, String phoneNumber) {
+        if (TextUtils.isEmpty(phoneNumber)) return;
         Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumber));
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
@@ -368,7 +371,6 @@ public class RxDeviceTool {
      * @return 联系人链表
      */
     public static List<HashMap<String, String>> getAllContactInfo(Context context) {
-        SystemClock.sleep(3000);
         ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
         // 1.获取内容解析者
         ContentResolver resolver = context.getContentResolver();
@@ -384,6 +386,7 @@ public class RxDeviceTool {
                 null, null, null);
         // 5.解析cursor
         while (cursor.moveToNext()) {
+
             // 6.获取查询的数据
             String contact_id = cursor.getString(0);
             // cursor.getString(cursor.getColumnIndex("contact_id"));//getColumnIndex
@@ -422,6 +425,30 @@ public class RxDeviceTool {
         // 12.关闭cursor
         cursor.close();
         return list;
+    }
+
+    /**
+     * 查询手机联系人
+     */
+    public static List<HashMap<String, String>> queryContactsInfo(Context context) {
+        List<HashMap<String, String>> mContactList = new ArrayList<>();
+        mContactList.clear();
+        Cursor cursor = context.getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
+        if (cursor == null)
+            return mContactList;
+        while (cursor.moveToNext()) {
+            String phoneName;
+            String phoneNumber;
+            HashMap<String, String> listItem = new HashMap<>();
+            phoneName = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+            phoneNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+            listItem.put("phoneName", phoneName);
+            listItem.put("phoneNumber", phoneNumber);
+            mContactList.add(listItem);
+        }
+        Log_Ma.e(TAG, "-----queryContactsShowData----------" + mContactList.toString());
+        cursor.close();
+        return mContactList;
     }
 
     /**

@@ -26,10 +26,10 @@ public class MzzToastUtils {
         if (context == null) return;
 
         if (toast == null) {
-            toast = Toast.makeText(context, hint, Toast.LENGTH_SHORT);
+            toast = Toast.makeText(context, hint, hint.length() <= 6 ? Toast.LENGTH_SHORT : Toast.LENGTH_LONG);
         } else {
             toast.cancel();
-            toast = Toast.makeText(context, hint, Toast.LENGTH_SHORT);
+            toast = Toast.makeText(context, hint, hint.length() <= 6 ? Toast.LENGTH_SHORT : Toast.LENGTH_LONG);
         }
 //        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 //        Point size = new Point();

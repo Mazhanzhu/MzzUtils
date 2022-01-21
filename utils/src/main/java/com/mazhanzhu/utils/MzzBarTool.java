@@ -142,7 +142,7 @@ public class MzzBarTool {
     }
 
     /**
-     * 反射唤醒通知栏
+     * 反射唤醒通知栏 31.2 100 0000  3700*0.125=1250
      *
      * @param context    上下文
      * @param methodName 方法名
@@ -158,7 +158,6 @@ public class MzzBarTool {
         }
     }
 
-
     //==============================================================================================以下设置状态栏相关
     /**
      * 需要在布局中加入
@@ -166,7 +165,6 @@ public class MzzBarTool {
      android:fitsSystemWindows="true"
      * 这两行属性
      */
-
 
     /**
      * 修改状态栏为全透明
@@ -229,7 +227,6 @@ public class MzzBarTool {
         } else if (type == 3) {
             activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
-
     }
 
     /**
@@ -243,7 +240,6 @@ public class MzzBarTool {
         } else if (type == 3) {
             activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
         }
-
     }
 
 
@@ -312,6 +308,5 @@ public class MzzBarTool {
         }
         return result;
     }
-
     //==============================================================================================以上为设置状态栏相关
 }

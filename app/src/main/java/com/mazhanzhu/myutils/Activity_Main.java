@@ -15,6 +15,7 @@ import com.mazhanzhu.myutils.databinding.ActivityMainBinding;
 import com.mazhanzhu.myutils.fm.Main_FmTab1;
 import com.mazhanzhu.myutils.fm.Main_FmTab2;
 import com.mazhanzhu.myutils.fm.Main_FmTab3;
+import com.mazhanzhu.utils.DividerItemDecoration_Ma;
 import com.mazhanzhu.utils.Log_Ma;
 import com.mazhanzhu.utils.MzzGlide;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
@@ -164,8 +165,10 @@ public class Activity_Main extends BaseAc_VB<ActivityMainBinding> {
         });
         ArrayList<BeanMzz> list = new ArrayList<>();
         list.add(new BeanMzz(1, "GPS相关", R.mipmap.gps, "", false));
+        list.add(new BeanMzz(2, "获取联系人", R.drawable.ic_baseline_account_box_24, "", true));
         MainAdapter mAdapter = new MainAdapter(R.layout.main_item, list, context);
         vb.mainRv.setLayoutManager(new LinearLayoutManager(context));
+        vb.mainRv.addItemDecoration(new DividerItemDecoration_Ma(context,DividerItemDecoration_Ma.HORIZONTAL_LIST));
         vb.mainRv.setAdapter(mAdapter);
     }
 

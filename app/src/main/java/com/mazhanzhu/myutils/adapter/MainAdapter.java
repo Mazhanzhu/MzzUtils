@@ -8,6 +8,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.mazhanzhu.myutils.R;
 import com.mazhanzhu.myutils.bean.BeanMzz;
+import com.mazhanzhu.myutils.ui.Ac_Contacts;
 import com.mazhanzhu.myutils.ui.Ac_GPS;
 
 import org.jetbrains.annotations.NotNull;
@@ -45,6 +46,9 @@ public class MainAdapter extends BaseQuickAdapter<BeanMzz, BaseViewHolder> {
         switch (id) {
             case 1:
                 context.startActivity(new Intent(context, Ac_GPS.class));
+                break;
+            case 2:
+                context.startActivity(new Intent(context, Ac_Contacts.class));
                 break;
         }
     }
