@@ -10,6 +10,18 @@
         android:scaleType="centerCrop"
         android:src="@mipmap/sp_bg" />
 
+    <TextView
+        android:id="@+id/daytxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mzzdp_13"
+        android:layout_marginTop="@dimen/mzzdp_50"
+        android:layout_marginRight="@dimen/mzzdp_13"
+        android:gravity="center"
+        android:text="@string/hint_content"
+        android:textColor="@color/red"
+        android:textSize="@dimen/mzzsp_16" />
+
     <com.mazhanzhu.utils.view.CountDownProgressView
         android:id="@+id/sp_countview"
         android:layout_width="@dimen/mzzdp_40"

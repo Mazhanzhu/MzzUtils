@@ -7,6 +7,8 @@ import android.view.View;
 import com.mazhanzhu.myutils.Activity_Main;
 import com.mazhanzhu.myutils.R;
 import com.mazhanzhu.myutils.base.BaseAc_VB;
+import com.mazhanzhu.myutils.base.Http_Net;
+import com.mazhanzhu.myutils.bean.Bean_DayTxt;
 import com.mazhanzhu.myutils.databinding.AcSplashBinding;
 import com.mazhanzhu.utils.Log_Ma;
 import com.mazhanzhu.utils.MzzAppUtils;
@@ -17,8 +19,13 @@ import com.mazhanzhu.utils.view.CountDownProgressView;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashMap;
+
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Author : 马占柱
@@ -43,6 +50,7 @@ public class Ac_Splash extends BaseAc_VB<AcSplashBinding> {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
+        vb.spCountview.setOnClickListener(this);
         if (MzzAppUtils.checkPermission(context, permiss)) {
             setDate();
         } else {
@@ -51,26 +59,36 @@ public class Ac_Splash extends BaseAc_VB<AcSplashBinding> {
     }
 
     private void setDate() {
-        isHavaPerMiss = true;
-        vb.spCountview.setTimeMillis(1000 * 5);
-        vb.spCountview.setProgressListener(new CountDownProgressView.OnProgressListener() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("encode", "json");
+        map.put("min_length", "10");
+        map.put("max_length", "30");
+        Http_Net.getInstance().getDayTxt().getDayTxt("https://v1.hitokoto.cn", map).enqueue(new Callback<Bean_DayTxt>() {
             @Override
-            public void onProgress(int progress) {
-                Log_Ma.e(TAG, "------" + progress);
-                if (progress == 0) {
-                    startActivity(Activity_Main.class);
-                }
+            public void onResponse(Call<Bean_DayTxt> call, Response<Bean_DayTxt> response) {
+                String ss = response.body().getHitokoto() + "\n出处：" +
+                        response.body().getFrom() + " 作者：" + response.body().getFrom_who();
+                vb.daytxt.setText(ss);
+                isHavaPerMiss = true;
+                vb.spCountview.setTimeMillis(1000 * 5);
+                vb.spCountview.setProgressListener(new CountDownProgressView.OnProgressListener() {
+                    @Override
+                    public void onProgress(int progress) {
+                        Log_Ma.e(TAG, "------" + progress);
+                        if (progress == 0) {
+                            startActivity(Activity_Main.class);
+                        }
+                    }
+                });
+                vb.spCountview.start();
+                MzzDeviceTool.queryContactsInfo(context);
+            }
+
+            @Override
+            public void onFailure(Call<Bean_DayTxt> call, Throwable t) {
+                MzzToastUtils.showToast(context, "失败");
             }
         });
-        vb.spCountview.setOnClickListener(this);
-        MzzDeviceTool.queryContactsInfo(context);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (isHavaPerMiss)
-            vb.spCountview.start();
     }
 
     @Override
