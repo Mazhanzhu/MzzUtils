@@ -168,7 +168,7 @@ public class Activity_Main extends BaseAc_VB<ActivityMainBinding> {
         list.add(new BeanMzz(2, "获取联系人", R.drawable.ic_baseline_account_box_24, "", true));
         MainAdapter mAdapter = new MainAdapter(R.layout.main_item, list, context);
         vb.mainRv.setLayoutManager(new LinearLayoutManager(context));
-        vb.mainRv.addItemDecoration(new DividerItemDecoration_Ma(context,DividerItemDecoration_Ma.HORIZONTAL_LIST));
+        vb.mainRv.addItemDecoration(new DividerItemDecoration_Ma(context, DividerItemDecoration_Ma.HORIZONTAL_LIST));
         vb.mainRv.setAdapter(mAdapter);
     }
 

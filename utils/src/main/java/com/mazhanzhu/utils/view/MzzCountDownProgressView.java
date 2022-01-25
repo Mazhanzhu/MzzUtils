@@ -21,7 +21,7 @@ import androidx.appcompat.widget.AppCompatTextView;
  * Time   : 2022/1/11 16:06
  * Desc   : 圆形倒计时
  */
-public class CountDownProgressView extends AppCompatTextView {
+public class MzzCountDownProgressView extends AppCompatTextView {
     //TODO 圆实心的颜色
     private int circSolidColor;
 
@@ -94,7 +94,7 @@ public class CountDownProgressView extends AppCompatTextView {
         }
     };
 
-    public CountDownProgressView(Context context) {
+    public MzzCountDownProgressView(Context context) {
         super(context);
         init();
     }
@@ -114,50 +114,50 @@ public class CountDownProgressView extends AppCompatTextView {
      * @param context
      * @param attrs
      */
-    public CountDownProgressView(Context context, AttributeSet attrs) {
+    public MzzCountDownProgressView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.CountDownProgressView);
+        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.MzzCountDownProgressView);
         if (typedArray != null) {
             //TODO 圆实心的颜色属性
-            if (typedArray.hasValue(R.styleable.CountDownProgressView_cd_circSolidColor)) {
+            if (typedArray.hasValue(R.styleable.MzzCountDownProgressView_cd_circSolidColor)) {
                 //有这个属性索引 获取用户设置的颜色
-                circSolidColor = typedArray.getColor(R.styleable.CountDownProgressView_cd_circSolidColor, 0);
+                circSolidColor = typedArray.getColor(R.styleable.MzzCountDownProgressView_cd_circSolidColor, 0);
             } else {
                 //没有这个属性索引 默认是浅灰色
-                circSolidColor = typedArray.getColor(R.styleable.CountDownProgressView_cd_circSolidColor, Color.parseColor("#D3D3D3"));
+                circSolidColor = typedArray.getColor(R.styleable.MzzCountDownProgressView_cd_circSolidColor, Color.parseColor("#D3D3D3"));
             }
 
             //TODO 园边框颜色属性
-            if (typedArray.hasValue(R.styleable.CountDownProgressView_cd_circFrameColor)) {
+            if (typedArray.hasValue(R.styleable.MzzCountDownProgressView_cd_circFrameColor)) {
                 //有这个属性索引 获取用户设置的颜色
-                circFrameColor = typedArray.getColor(R.styleable.CountDownProgressView_cd_circFrameColor, 0);
+                circFrameColor = typedArray.getColor(R.styleable.MzzCountDownProgressView_cd_circFrameColor, 0);
             } else {
                 //没有这个属性索引 默认是深灰色
-                circFrameColor = typedArray.getColor(R.styleable.CountDownProgressView_cd_circFrameColor, Color.parseColor("#A9A9A9"));
+                circFrameColor = typedArray.getColor(R.styleable.MzzCountDownProgressView_cd_circFrameColor, Color.parseColor("#A9A9A9"));
             }
 
             //TODO 文字颜色属性
-            if (typedArray.hasValue(R.styleable.CountDownProgressView_cd_textColor)) {
+            if (typedArray.hasValue(R.styleable.MzzCountDownProgressView_cd_textColor)) {
                 //有这个属性索引 获取用户设置的颜色
-                textColor = typedArray.getColor(R.styleable.CountDownProgressView_cd_textColor, 0);
+                textColor = typedArray.getColor(R.styleable.MzzCountDownProgressView_cd_textColor, 0);
             } else {
                 //没有这个属性索引 默认是白色
-                textColor = typedArray.getColor(R.styleable.CountDownProgressView_cd_textColor, Color.parseColor("#ffffff"));
+                textColor = typedArray.getColor(R.styleable.MzzCountDownProgressView_cd_textColor, Color.parseColor("#ffffff"));
             }
 
             //TODO 进度条颜色属性
-            if (typedArray.hasValue(R.styleable.CountDownProgressView_cd_progressColor)) {
+            if (typedArray.hasValue(R.styleable.MzzCountDownProgressView_cd_progressColor)) {
                 //有这个属性索引 获取用户设置的颜色
-                progressColor = typedArray.getColor(R.styleable.CountDownProgressView_cd_progressColor, 0);
+                progressColor = typedArray.getColor(R.styleable.MzzCountDownProgressView_cd_progressColor, 0);
             } else {
                 //没有这个属性索引 默认是蓝色
-                progressColor = typedArray.getColor(R.styleable.CountDownProgressView_cd_progressColor, Color.parseColor("#0000FF"));
+                progressColor = typedArray.getColor(R.styleable.MzzCountDownProgressView_cd_progressColor, Color.parseColor("#0000FF"));
             }
 
-            if (typedArray.hasValue(R.styleable.CountDownProgressView_cd_textstring)) {
+            if (typedArray.hasValue(R.styleable.MzzCountDownProgressView_cd_textstring)) {
                 //有这个属性索引 获取用户设置的颜色
-                mText = typedArray.getString(R.styleable.CountDownProgressView_cd_textstring);
+                mText = typedArray.getString(R.styleable.MzzCountDownProgressView_cd_textstring);
             }
 
             /**

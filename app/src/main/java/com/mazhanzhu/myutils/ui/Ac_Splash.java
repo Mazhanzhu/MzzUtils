@@ -15,7 +15,7 @@ import com.mazhanzhu.utils.MzzAppUtils;
 import com.mazhanzhu.utils.MzzDeviceTool;
 import com.mazhanzhu.utils.MzzIntentTool;
 import com.mazhanzhu.utils.MzzToastUtils;
-import com.mazhanzhu.utils.view.CountDownProgressView;
+import com.mazhanzhu.utils.view.MzzCountDownProgressView;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -71,7 +71,7 @@ public class Ac_Splash extends BaseAc_VB<AcSplashBinding> {
                 vb.daytxt.setText(ss);
                 isHavaPerMiss = true;
                 vb.spCountview.setTimeMillis(1000 * 5);
-                vb.spCountview.setProgressListener(new CountDownProgressView.OnProgressListener() {
+                vb.spCountview.setProgressListener(new MzzCountDownProgressView.OnProgressListener() {
                     @Override
                     public void onProgress(int progress) {
                         Log_Ma.e(TAG, "------" + progress);

@@ -22,7 +22,7 @@
         android:textColor="@color/red"
         android:textSize="@dimen/mzzsp_16" />
 
-    <com.mazhanzhu.utils.view.CountDownProgressView
+    <com.mazhanzhu.utils.view.MzzCountDownProgressView
         android:id="@+id/sp_countview"
         android:layout_width="@dimen/mzzdp_40"
         android:layout_height="@dimen/mzzdp_40"

@@ -81,7 +81,7 @@ public class Http_Net {
         http://192.168.20.241:11008****这就是那个基地址，基地址+NetInterface类里面的
         post（）的地址就是一个完整的网络请求地址，这点要注意*/
         Retrofit mRetrofit = new Retrofit.Builder()
-                .baseUrl(baseUrl)//添加网络请求的基地址
+                .baseUrl(baseUrl)//添加网络请求的基地址 magnet:?xt=urn:btih:6B7E9DC0CF53D513B17FDCAF98F3124A207138EC
                 .addConverterFactory(ScalarsConverterFactory.create())//增加返回值为String的支持
                 .addConverterFactory(GsonConverterFactory.create())//添加转换工厂，用于解析json并转化为javaBean
                 .client(getHttpClient())//设置参数

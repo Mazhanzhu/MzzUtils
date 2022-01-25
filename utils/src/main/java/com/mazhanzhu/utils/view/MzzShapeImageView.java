@@ -29,7 +29,7 @@ import androidx.appcompat.widget.AppCompatImageView;
  * Time   : 2022/1/13 10:48
  * Desc   : 可设置形状的ImageView，抗边缘锯齿
  */
-public class ShapeImageView extends AppCompatImageView {
+public class MzzShapeImageView extends AppCompatImageView {
     private static final Bitmap.Config BITMAP_CONFIG = Bitmap.Config.ARGB_8888;
     private static final int COLORDRAWABLE_DIMENSION = 2;
 
@@ -52,11 +52,11 @@ public class ShapeImageView extends AppCompatImageView {
     private Bitmap mBitmap;
     private Path mPath = new Path();
 
-    public ShapeImageView(Context context, AttributeSet attrs) {
+    public MzzShapeImageView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ShapeImageView(Context context, AttributeSet attrs, int defStyle) {
+    public MzzShapeImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle); // 虽然此处会调用setImageDrawable，但此时成员变量还未被正确初始化
         init(attrs);
         mBorderPaint.setStyle(Style.STROKE);
@@ -69,16 +69,16 @@ public class ShapeImageView extends AppCompatImageView {
 
     private void init(AttributeSet attrs) {
 
-        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.ShapeImageView);
-        mShape = a.getInt(R.styleable.ShapeImageView_siv_shape, mShape);
-        mRoundRadius = a.getDimension(R.styleable.ShapeImageView_siv_round_radius, mRoundRadius);
-        mBorderSize = a.getDimension(R.styleable.ShapeImageView_siv_border_size, mBorderSize);
-        mBorderColor = a.getColor(R.styleable.ShapeImageView_siv_border_color, mBorderColor);
+        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MzzShapeImageView);
+        mShape = a.getInt(R.styleable.MzzShapeImageView_siv_shape, mShape);
+        mRoundRadius = a.getDimension(R.styleable.MzzShapeImageView_siv_round_radius, mRoundRadius);
+        mBorderSize = a.getDimension(R.styleable.MzzShapeImageView_siv_border_size, mBorderSize);
+        mBorderColor = a.getColor(R.styleable.MzzShapeImageView_siv_border_color, mBorderColor);
 
-        mRoundRadiusLeftBottom = a.getDimension(R.styleable.ShapeImageView_siv_round_radius_leftBottom, mRoundRadius);
-        mRoundRadiusLeftTop = a.getDimension(R.styleable.ShapeImageView_siv_round_radius_leftTop, mRoundRadius);
-        mRoundRadiusRightBottom = a.getDimension(R.styleable.ShapeImageView_siv_round_radius_rightBottom, mRoundRadius);
-        mRoundRadiusRightTop = a.getDimension(R.styleable.ShapeImageView_siv_round_radius_rightTop, mRoundRadius);
+        mRoundRadiusLeftBottom = a.getDimension(R.styleable.MzzShapeImageView_siv_round_radius_leftBottom, mRoundRadius);
+        mRoundRadiusLeftTop = a.getDimension(R.styleable.MzzShapeImageView_siv_round_radius_leftTop, mRoundRadius);
+        mRoundRadiusRightBottom = a.getDimension(R.styleable.MzzShapeImageView_siv_round_radius_rightBottom, mRoundRadius);
+        mRoundRadiusRightTop = a.getDimension(R.styleable.MzzShapeImageView_siv_round_radius_rightTop, mRoundRadius);
 
         a.recycle();
 

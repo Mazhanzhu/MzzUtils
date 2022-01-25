@@ -5,6 +5,16 @@
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/ZhuGe/Demo_Ma/MyUtils/app/src/main/res/drawable/bg_progressbar.xml" value="0.259765625" />
+        <entry key="..\:/ZhuGe/Demo_Ma/MyUtils/app/src/main/res/drawable/bg_white_7.xml" value="0.259765625" />
+        <entry key="..\:/ZhuGe/Demo_Ma/MyUtils/app/src/main/res/layout/ac_splash.xml" value="0.22" />
+        <entry key="..\:/ZhuGe/Demo_Ma/MyUtils/app/src/main/res/layout/loading_dialog.xml" value="0.21379781420765026" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

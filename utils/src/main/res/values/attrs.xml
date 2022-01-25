@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="CountDownProgressView">
+    <declare-styleable name="MzzCountDownProgressView">
         <!-- 圆实心的颜色 -->
         <attr name="cd_circSolidColor" format="color"></attr>
         <!-- 圆边框的颜色 -->
@@ -12,7 +12,7 @@
         <!--文字设置-->
         <attr name="cd_textstring" format="string"></attr>
     </declare-styleable>
-    <declare-styleable name="ShapeImageView">
+    <declare-styleable name="MzzShapeImageView">
         <!--形状选择-->
         <attr name="siv_shape" format="enum">
             <!--矩形-->
